@@ -1,0 +1,194 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    /* Cambiado a columna */
+    border: 5px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 97vh;
+    /* Ajuste para que ocupe toda la pantalla verticalmente */
+}
+
+.left {
+    flex: 1;
+    align-items: flex-start;
+    margin-top: 10vh;
+    flex-direction: column;
+
+
+}
+
+.right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    background-image: url('https://i.redd.it/nlhc5edcttqb1.gif');
+    /* Ajusta las siguientes propiedades según tus necesidades */
+    background-size: cover;
+    /* Para cubrir todo el tamaño del contenedor */
+    background-position: center;
+    /* Para centrar la imagen */
+    /* background-repeat: no-repeat; (esto puede ser útil si no quieres que la imagen se repita) */
+}
+
+
+/* CSS */
+.login-title {
+    font-family: "Europa Title", sans-serif;
+    font-size: 40px;
+    /* Tamaño de fuente más grande */
+    font-weight: bold;
+    /* Negrita */
+    margin-bottom: 20px;
+
+
+    /* Espacio por debajo del título */
+
+    /* Centrar el texto */
+}
+
+/* Resto de los estilos ya definidos */
+.login-form {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-form {
+    width: 100%;
+    /* Ajustar el ancho al 100% del contenedor */
+    padding: 20px;
+    /* Agregar un poco de espacio alrededor del formulario */
+    box-sizing: border-box;
+    /* Incluir el padding en el ancho total */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    /* Espacio entre grupos de elementos */
+}
+
+.form-group label {
+    display: block;
+    /* Mostrar las etiquetas como bloques para ocupar toda la línea */
+    margin-bottom: 5px;
+    /* Espacio entre la etiqueta y el campo de entrada */
+}
+
+.form-group input {
+    width: calc(70% - 20px);
+    /* Ancho igual al 100% del contenedor menos el espacio de relleno */
+    padding: 10px;
+    /* Agregar relleno alrededor del campo de entrada */
+    border: 1px solid #ccc;
+    /* Añadir un borde para separar visualmente los campos */
+    border-radius: 5px;
+    /* Redondear las esquinas del campo */
+    box-sizing: border-box;
+    /* Incluir el padding y el borde en el ancho total */
+}
+
+.form-group button {
+    width: calc(70% - 20px);
+    /* Ancho igual al 100% del contenedor menos el espacio de relleno */
+    padding: 10px;
+    /* Agregar relleno alrededor del botón */
+    background-color: darkorange;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    /* Eliminar el borde del botón */
+    border-radius: 5px;
+    /* Redondear las esquinas del botón */
+    cursor: pointer;
+    /* Cambiar el cursor al pasar por encima del botón */
+}
+
+.form-options {
+    margin-top: 15px;
+    /* Espacio encima del grupo de opciones */
+    margin-bottom: 10px;
+    /* Reducir el espacio por debajo del grupo de opciones */
+}
+
+.form-options a {
+    display: block;
+    /* Mostrar los enlaces como bloques para ocupar toda la línea */
+    margin-bottom: 5px;
+    /* Espacio entre los enlaces */
+    font-size: 14px;
+    /* Tamaño de fuente más pequeño */
+    text-decoration: underline;
+    /* Subrayado */
+    color: orange;
+    /* Color naranja */
+}
+
+.form-options a:hover {
+    color: darkorange;
+    /* Cambiar el color cuando el enlace está en estado de hover */
+}
+
+/* CSS */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-left: 30px;
+    /* Espacio para el icono */
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 10px;
+    /* Ajustar según la posición deseada del icono */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-container {
+    width: 80%;
+    /* Ancho del contenedor del formulario */
+    max-width: 400px;
+
+    margin-top: 10%;
+
+}
+
+.form-container form {
+    display: none;
+    width: 600px;
+}
+
+.form-container form.active {
+    display: block;
+}
+
+.image-container {
+    text-align: center;
+
+}
+
+.image-container img {
+    max-width: 30%;
+    /* Ajustar el ancho máximo de la imagen */
+    height: auto;
+    /* Permitir que la altura se ajuste automáticamente */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+}
