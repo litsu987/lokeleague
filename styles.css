@@ -561,3 +561,53 @@ section {
 .closingAnimation {
     animation: shrinkWidth 0.5s ease-in-out;
 }
+
+        /* Estilos opcionales */
+        #liga-container {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.participar {
+            background-color: #007bff;
+            color: #fff;
+        }
+        button.info {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .images-container {
+            display: none;
+            margin-top: 10px;
+        }
+        .images-container.active {
+            display: block;
+        }
+        .images-container img {
+            width: 100px;
+            margin: 5px;
+        }
+        .text-container p {
+            color: black; /* Cambia el color del texto a negro */
+            font-weight: bold; /* Hace que el texto esté en negrita */
+        }
