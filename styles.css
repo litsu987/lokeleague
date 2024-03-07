@@ -1,0 +1,563 @@
+/* FONDO COLOR */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(135deg, #00B7D4, #505488, #2F3F80, #161569, #5A4894, #A950A1, #FF7C1E);
+    background-size: 400% 400%;
+    position: relative;
+    animation: cambiar 10s ease-in-out infinite;
+}
+
+@keyframes cambiar {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    /* Cambiado a columna */
+    border: 5px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 97vh;
+    /* Ajuste para que ocupe toda la pantalla verticalmente */
+}
+
+.left {
+    flex: 1;
+    align-items: flex-start;
+    margin-top: 10vh;
+    flex-direction: column;
+
+
+}
+
+.right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+    background-image: url('https://i.redd.it/nlhc5edcttqb1.gif');
+    /* Ajusta las siguientes propiedades según tus necesidades */
+    background-size: cover;
+    /* Para cubrir todo el tamaño del contenedor */
+    background-position: center;
+    /* Para centrar la imagen */
+    /* background-repeat: no-repeat; (esto puede ser útil si no quieres que la imagen se repita) */
+}
+
+
+.login-title {
+    font-family: "Europa Title", sans-serif;
+    font-size: 40px;
+    /* Tamaño de fuente más grande */
+    font-weight: bold;
+    /* Negrita */
+    margin-bottom: 20px;
+
+
+    /* Espacio por debajo del título */
+
+    /* Centrar el texto */
+}
+
+/* Resto de los estilos ya definidos */
+.login-form {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-form {
+    width: 100%;
+    /* Ajustar el ancho al 100% del contenedor */
+    padding: 20px;
+    /* Agregar un poco de espacio alrededor del formulario */
+    box-sizing: border-box;
+    /* Incluir el padding en el ancho total */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    /* Espacio entre grupos de elementos */
+}
+
+.form-group label {
+    display: block;
+    /* Mostrar las etiquetas como bloques para ocupar toda la línea */
+    margin-bottom: 5px;
+    /* Espacio entre la etiqueta y el campo de entrada */
+}
+
+.form-group input {
+    width: calc(70% - 20px);
+    /* Ancho igual al 100% del contenedor menos el espacio de relleno */
+    padding: 10px;
+    /* Agregar relleno alrededor del campo de entrada */
+    border: 1px solid #ccc;
+    /* Añadir un borde para separar visualmente los campos */
+    border-radius: 5px;
+    /* Redondear las esquinas del campo */
+    box-sizing: border-box;
+    /* Incluir el padding y el borde en el ancho total */
+}
+
+.form-group button {
+    width: calc(70% - 20px);
+    /* Ancho igual al 100% del contenedor menos el espacio de relleno */
+    padding: 10px;
+    /* Agregar relleno alrededor del botón */
+    background-color: darkorange;
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    /* Eliminar el borde del botón */
+    border-radius: 5px;
+    /* Redondear las esquinas del botón */
+    cursor: pointer;
+    /* Cambiar el cursor al pasar por encima del botón */
+}
+
+.form-options {
+    margin-top: 15px;
+    /* Espacio encima del grupo de opciones */
+    margin-bottom: 10px;
+    /* Reducir el espacio por debajo del grupo de opciones */
+}
+
+.form-options a {
+    display: block;
+    /* Mostrar los enlaces como bloques para ocupar toda la línea */
+    margin-bottom: 5px;
+    /* Espacio entre los enlaces */
+    font-size: 14px;
+    /* Tamaño de fuente más pequeño */
+    text-decoration: underline;
+    /* Subrayado */
+    color: orange;
+    /* Color naranja */
+}
+
+.form-options a:hover {
+    color: darkorange;
+    /* Cambiar el color cuando el enlace está en estado de hover */
+}
+
+/* CSS */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-left: 30px;
+    /* Espacio para el icono */
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 10px;
+    /* Ajustar según la posición deseada del icono */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-container {
+    width: 80%;
+    /* Ancho del contenedor del formulario */
+    max-width: 400px;
+
+    margin-top: 10%;
+
+}
+
+.form-container form {
+    display: none;
+    width: 600px;
+}
+
+.form-container form.active {
+    display: block;
+}
+
+.image-container {
+    text-align: center;
+
+}
+
+.image-container img {
+    max-width: 30%;
+    /* Ajustar el ancho máximo de la imagen */
+    height: auto;
+    /* Permitir que la altura se ajuste automáticamente */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+
+/* DASHBOARD
+/* Estilos para el contenedor centrado */
+.centeredContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    /* Centra horizontalmente */
+    width: 50%;
+    /* Puedes ajustar el ancho según sea necesario */
+}
+
+
+/* Estilos para el contenedor horizontal */
+/* Estilos para el contenedor horizontal */
+/* Estilos para el contenedor horizontal */
+.horizontalContainer {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan si no caben en una línea */
+    max-width: 200%;
+    /* Limita el ancho del contenedor */
+    margin: auto;
+    /* Centra horizontalmente */
+    height: 100vh;
+    /* Ajusta el alto al 100% del viewport */
+}
+
+/* Estilos para los elementos dentro del contenedor horizontal */
+/* Estilos para los elementos dentro del contenedor horizontal */
+.horizontalContainer>div {
+    background-color: #ffffff;
+    margin: 2vw;
+    padding: 2vw;
+    border: 7px solid #ccc;
+    flex: 1;
+    width: 60vw;
+    /* Ajusta el ancho según sea necesario */
+    height: 60vh;
+    /* Ajusta la altura según sea necesario */
+    transition: transform 0.3s ease;
+    border-radius: 50px;
+}
+
+
+
+
+.horizontalContainer>div:hover {
+    transform: scale(1.1);
+    /* Escala aumentada al pasar el ratón */
+}
+
+.elemento1 {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c43df9e9-7cf9-486f-b650-624a47790895/dfa50it-c1b072b7-9b5c-4314-b89f-8a46958ee0d6.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M0M2RmOWU5LTdjZjktNDg2Zi1iNjUwLTYyNGE0Nzc5MDg5NVwvZGZhNTBpdC1jMWIwNzJiNy05YjVjLTQzMTQtYjg5Zi04YTQ2OTU4ZWUwZDYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yfrJKU3MPGqrqp_hV4sE9TvEe8ff0BohB4SxqmzTqkQ');
+    /* Reemplaza 'ruta_de_la_imagen.jpg' con la URL o ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    /* Otros estilos según tus necesidades */
+}
+
+.elemento2 {
+    background-image: url('https://i.redd.it/69e1d87us6ha1.gif');
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen de fondo para que se ajuste completamente dentro del elemento */
+    background-position: left center;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    /* Otros estilos según tus necesidades */
+}
+
+.elemento3 {
+    background-image: url('https://i.kym-cdn.com/photos/images/original/002/609/486/a41.gif');
+    background-size: cover;
+    background-position: 42% center;
+    /* Ajusta la posición un poco hacia la izquierda */
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    /* Otros estilos según tus necesidades */
+
+}
+
+.elemento4 {
+    background-image: url('https://i.redd.it/nlhc5edcttqb1.gif');
+    background-size: cover;
+    background-position: 50% center;
+    /* Ajusta la posición un poco hacia la izquierda */
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    /* Otros estilos según tus necesidades */
+}
+
+.titulo {
+    font-family: 'TuFuenteFavorita', sans-serif;
+    font-size: 40px;
+    color: #eeab46;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, color 0.3s;
+    z-index: 1;
+}
+
+.elemento1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* Inicialmente invisible */
+    transition: opacity 0.3s;
+}
+
+/* Desactivar el efecto de escala cuando elemento1 está activo */
+.elemento1.active:hover {
+    transform: none;
+    /* Anula cualquier transformación de escala */
+}
+
+
+.elemento1.active:hover .titulo {
+    transform: none;
+    color: inherit;
+    /* Restaura los estilos predeterminados del título cuando está activo y se hace hover */
+}
+
+
+.elemento2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* Inicialmente invisible */
+    transition: opacity 0.3s;
+}
+
+.elemento2:hover::before {
+    opacity: 1;
+    /* Muestra la superposición al pasar el ratón */
+}
+
+.elemento2:hover .titulo {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #ffffff;
+}
+
+
+
+
+.elemento3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* Inicialmente invisible */
+    transition: opacity 0.3s;
+}
+
+.elemento3:hover::before {
+    opacity: 1;
+    /* Muestra la superposición al pasar el ratón */
+}
+
+.elemento3:hover .titulo {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #ffffff;
+}
+
+
+
+
+.elemento4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* Inicialmente invisible */
+    transition: opacity 0.3s;
+}
+
+.elemento4:hover::before {
+    opacity: 1;
+    /* Muestra la superposición al pasar el ratón */
+}
+
+.elemento4:hover .titulo {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #ffffff;
+}
+
+.elemento1,
+.elemento2,
+.elemento3,
+.elemento4 {
+    cursor: pointer;
+}
+
+
+.elemento1:active,
+.elemento2:active,
+.elemento3:active,
+.elemento4:active {
+    transform: translateY(2px);
+    /* Efecto de clic */
+}
+
+/* Otras reglas CSS existentes... */
+
+
+.elemento1.active {
+    position: absolute;
+    z-index: 2;
+    /* Asegura que el elemento esté por encima de los demás */
+    width: 100%;
+    /* Ancho inicial del elemento */
+    height: 80vh;
+    overflow: hidden;
+    /* Oculta el contenido que se desborda horizontalmente */
+    animation: expandWidth 0.5s ease-in-out;
+    /* Animación para expandir gradualmente hacia la derecha */
+    background-image: none;
+    /* Elimina la imagen de fondo cuando está activo */
+    padding: 0;
+    /* Elimina el relleno cuando está activo */
+    overflow: visible;
+    /* Permite que el contenido se muestre cuando está activo */
+}
+
+.elemento1.active~.elemento1,
+.elemento1.active~.elemento2,
+.elemento1.active~.elemento3,
+.elemento1.active~.elemento4 {
+    pointer-events: none;
+}
+
+.elemento1.active .titulo,
+.elemento2.active .titulo,
+.elemento3.active .titulo,
+.elemento4.active .titulo {
+    display: none;
+}
+
+@keyframes expandWidth {
+    0% {
+        width: 0;
+        /* Comienza con ancho 0 */
+    }
+
+    100% {
+        width: 100%;
+        /* Se expande al 100% del ancho original */
+    }
+}
+
+@keyframes closeAnimation {
+    0% {
+        width: 100%;
+        /* Comienza con el ancho completo */
+    }
+
+    100% {
+        width: 0;
+        /* Termina con un ancho de 0 */
+    }
+}
+
+
+.elemento1.active #formulario {
+    display: block;
+}
+
+
+
+.minimize-btn {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.elemento1.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Esto permite que los eventos del ratón pasen a través del div superpuesto */
+    /* Otros estilos... */
+}
+
+@keyframes shrinkWidth {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.closingAnimation {
+    animation: shrinkWidth 0.5s ease-in-out;
+}

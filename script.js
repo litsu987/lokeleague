@@ -32,3 +32,21 @@ returnToLoginLink.addEventListener("click", function (e) {
     forgotPasswordForm.classList.remove("active");
     loginForm.classList.add("active");
 });
+
+
+
+const elementos = document.querySelectorAll('.elemento1, .elemento2, .elemento3, .elemento4');
+
+elementos.forEach(elemento => {
+    elemento.addEventListener('click', () => {
+        // Si el elemento ya está activo, no hagas nada
+        if (elemento.classList.contains('active')) {
+            return;
+        }
+
+        // Remueve la clase 'active' de todos los elementos
+        elementos.forEach(el => el.classList.remove('active'));
+        // Agrega la clase 'active' solo al elemento clickeado
+        elemento.classList.add('active');
+    });
+});
