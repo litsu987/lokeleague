@@ -21,70 +21,7 @@
         label {
             margin-right: 10px;
         }
-         /* Estilos opcionales */
-         #liga-container {
-            width: 300px;
-            margin: 0 auto;
-            text-align: center;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        h1 {
-            color: #333;
-        }
-        input[type="text"] {
-            width: 70%;
-            padding: 8px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .images-container {
-            display: inline-block; 
-            margin-top: 10px;
-            overflow-x: auto; 
-            text-align: center; 
-            border-right: 1px solid #ccc; 
-        }
-        .images-container:last-child {
-            border-right: none; 
-        }
-        .gen-selected {
-            background-color: #ccc; /* Color de fondo gris */
-        }
-        .text-container p {
-            color: black; 
-            font-weight: bold; 
-            margin: 0;
-        }
-
-        /* Aumentar el tamaño de las letras Gen */
-        .images-container p {
-            font-size: 18px; /* Puedes ajustar el tamaño según tu preferencia */
-            transition: color 0.3s; /* Transición de color */
-        }
-
-        /* Cambiar el color al pasar el ratón */
-        .images-container p:hover {
-            color: blue; /* Puedes cambiar el color según tu preferencia */
-            cursor: pointer; /* Cambiar el cursor */
-        }
-
-        /* Estilos omitidos por brevedad */
-        #liga-container {
-            /* Estilos omitidos por brevedad */
-        }
-        .images-container {
-            /* Estilos omitidos por brevedad */
-        }
-        .gen-images {
-            display: none; /* Ocultar todas las imágenes al principio */
-        }
-        .gen-images.active {
-            display: block; /* Mostrar las imágenes de la generación activa */
-        }
+      
     </style>
 </head>
 <body>

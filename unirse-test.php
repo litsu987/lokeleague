@@ -7,13 +7,13 @@
     <style>
         /* Estilos opcionales */
         #liga-container {
-    width: 300px; /* Anchura del contenedor */
-    margin: 0 auto; /* Margen superior e inferior 0, margen izquierdo y derecho automático (centra horizontalmente) */
-    text-align: center; /* Centra el texto dentro del contenedor */
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-}
+            width: 400px; /* Anchura del contenedor */
+            margin: 0 auto; /* Margen superior e inferior 0, margen izquierdo y derecho automático (centra horizontalmente) */
+            text-align: center; /* Centra el texto dentro del contenedor */
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
 
         h1 {
             color: #333;
@@ -70,6 +70,13 @@
         .gen-images.active {
             display: block; /* Mostrar las imágenes de la generación activa */
         }
+
+        /* Estilos para las imágenes */
+        .gen-images img {
+            width: 100px; /* Ancho de las imágenes */
+            height: auto; /* Altura automática para mantener la proporción */
+            margin: 5px; /* Margen entre las imágenes */
+        }
         
     </style>
 </head>
@@ -81,6 +88,9 @@
         
 
         <div class="text-container">
+            <div class="images-container gen-all">
+                <p class="gen-all">Todos</p>
+            </div>
             <div class="images-container gen-i">
                 <p class="gen-i">GenI</p>
             </div>
@@ -99,25 +109,35 @@
         </div>
 
         <div class="gen-images-container">
+            <div class="gen-images gen-all-images">
+                <img src="/img/rojofuego.webp" alt="Gen I">
+                <img src="/img/verdehoja.webp" alt="Gen I">
+                <img src="/img/hearthgold.webp" alt="Gen II">
+                <img src="/img/soulsilver.webp" alt="Gen II">
+                <img src="/img/emerald-logo@2.webp" alt="Gen III">
+                <img src="/img/platinum-logo.webp" alt="Gen IV">
+                <img src="/img/black-2-logo@2.webp" alt="Gen V">
+                <img src="/img/white-2-logo@2.webp" alt="Gen V">
+            </div>
             <div class="gen-images gen-i-images">
-                <img src="imagen_gen1.jpg" alt="Gen I">
-                <img src="imagen_gen2.jpg" alt="Gen I">
+                <img src="/img/rojofuego.webp" alt="Gen I">
+                <img src="/img/verdehoja.webp" alt="Gen I">
             </div>
             <div class="gen-images gen-ii-images">
-                <img src="imagen_gen3.jpg" alt="Gen II">
-                <img src="imagen_gen4.jpg" alt="Gen II">
+                <img src="/img/hearthgold.webp" alt="Gen II">
+                <img src="/img/soulsilver.webp" alt="Gen II">
             </div>
             <div class="gen-images gen-iii-images">
-                <img src="imagen_gen5.jpg" alt="Gen III">
-                <img src="imagen_gen6.jpg" alt="Gen III">
+                <img src="/img/emerald-logo@2.webp" alt="Gen III">
             </div>
             <div class="gen-images gen-iv-images">
-                <img src="imagen_gen7.jpg" alt="Gen IV">
-                <img src="imagen_gen8.jpg" alt="Gen IV">
+                <img src="/img/platinum-logo.webp" alt="Gen IV">
+              
+
             </div>
             <div class="gen-images gen-v-images">
-                <img src="imagen_gen9.jpg" alt="Gen V">
-                <img src="imagen_gen10.jpg" alt="Gen V">
+                <img src="/img/black-2-logo@2.webp" alt="Gen V">
+                <img src="/img/white-2-logo@2.webp" alt="Gen V">
             </div>
         </div>
     </div>
@@ -136,6 +156,16 @@
                     var selectedGenImagesContainer = document.querySelector('.' + genClass + '-images');
                     selectedGenImagesContainer.style.display = 'block'; // Muestra el contenedor de imágenes correspondiente
                 });
+            });
+
+            // Agregar funcionalidad para la opción "Todos"
+            var allImagesContainer = document.querySelector('.gen-all-images');
+            var genAllOption = document.querySelector('.gen-all');
+            genAllOption.addEventListener('click', function() {
+                genImagesContainers.forEach(function(container) {
+                    container.style.display = 'none'; //
+                });
+                allImagesContainer.style.display = 'block'; // Muestra el contenedor de imágenes de todas las generaciones
             });
         });
     </script>
