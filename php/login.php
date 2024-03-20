@@ -1,5 +1,4 @@
 <?php
-session_start();
 include("config.php");
 
 try {
@@ -8,13 +7,13 @@ try {
     $username = $dbUser;
     $pw = $dbPass;
     $pdo = new PDO("mysql:host=$hostname;dbname=$dbname", "$username", "$pw");
+
+   
 } catch (PDOException $e) {
     $error_message = "Failed to get DB handle: " . $e->getMessage();
-    echo '<script>console.error('.json_encode($error_message).');</script>';
-    escribirEnLog("[LOGIN] " . $e);
+    error_log($error_message); // Envía el mensaje de error a la salida estándar
     exit;
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar si el formulario de inicio de sesión fue enviado
     if (isset($_POST['email']) && isset($_POST['password'])) {
