@@ -15,15 +15,78 @@
         .columna {
             width: 25%; /* Ancho de cada columna */
         }
-        .input {
-            margin-bottom: 10px;
-        }
+  
         label {
             margin-right: 10px;
         }
 
+        .random-mode-option {
+            border: 1px solid #ccc; /* Agrega un borde alrededor de cada opción */
+            padding: 10px; /* Añade un espacio interno para separar las opciones */
+            margin-bottom: 10px; /* Agrega espacio debajo de cada opción */
+            width: 30vh; /* Anchura del contenedor */
+            
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+   
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* seleccion jeugo css */
         #liga-container {
             width: 400px; /* Anchura del contenedor */
+            height: auto;
             margin: 0 auto; /* Margen superior e inferior 0, margen izquierdo y derecho automático (centra horizontalmente) */
             text-align: center; /* Centra el texto dentro del contenedor */
             border: 1px solid #ccc;
@@ -37,7 +100,6 @@
         input[type="text"] {
             width: 70%;
             padding: 8px;
-            margin-top: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -150,13 +212,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener las normas del modo aleatorio
     $normas_aleatorias = [];
     if (isset($_POST['entrenadores_aleatorias'])) {
-        $normas_aleatorias[] = "Entrenadores Aleatorias";
+        $normas_aleatorias[] = "Entrenadores Aleatorios";
     }
     if (isset($_POST['salvajes_aleatorias'])) {
-        $normas_aleatorias[] = "Salvajes Aleatorias";
+        $normas_aleatorias[] = "Salvajes Aleatorios";
     }
     if (isset($_POST['ataques_aleatorias'])) {
-        $normas_aleatorias[] = "Ataques Aleatorias";
+        $normas_aleatorias[] = "Ataques Aleatorios";
     }
     if (isset($_POST['habilidades_aleatorias'])) {
         $normas_aleatorias[] = "Habilidades Aleatorias";
@@ -181,10 +243,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-    <div class="texto-formulario">
-                        <h2>Crear Liga</h2>
-                        <!-- Puedes agregar un mensaje de error si lo necesitas -->
-                    </div>
     <div id="contenidoAdicional" class="popupContainer">
         <div class="popupContent">
 
@@ -193,12 +251,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="columna">
                     
                     <div class="input">
-                        <label for="nombre">Nombre de la liga:</label><br>
+                        <label for="nombre"></label>
+                        <h3>Nombre de la Liga </h3>
                         <input type="text" placeholder="Ingresa el nombre de la liga" id="nombre" name="nombre" required>
                     </div>
 
                     <div class="input">
-                        <label for="numero_personas">Participantes:</label><br>
+                        <label for="numero_personas"></label><br>
+                        <h3>Participantes: </h3>
                         <input type="number" placeholder="Número de participantes"  id="numero_personas" name="numero_personas" required>
                     </div>
 
@@ -213,38 +273,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="datetime-local" id="fecha_fin" name="fecha_fin" required>
                         </div>
                     </div>
+                    <button type="submit" name="enviar" id="enviar">Enviar</button>
                 </div>
-
+                
                 <div class="columna" style="border-right: 3px solid #ccc;">
                     <div class="input">
-                        <div class="statusToggle">
-                            <label for="fecha_fin">Modalidad</label><br>
-                            <input type="checkbox">
-                            <span class="toggleFeedback">Normal</span>
-                        </div>
+                        <h2>Modalidad</h2>
+                        <label class="switch" for="modo-aleatorio-toggle">
+                            <input type="checkbox" id="modo-aleatorio-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="modalidad-feedback">Modo Normal</span>
                     </div>
+
+
                                     
                     <div class="input">
                         <h2>Normas Modo Aleatorio </h2>
-                                            
-                        <input type="checkbox">
-                        <span class="toggleFeedback">Entrenadores Aleatorias</span>
-                        <br>
-                                            
-                        <input type="checkbox">
-                        <span class="toggleFeedback">Salvajes Aleatorias</span>
-                        <br>
-                                            
-                        <input type="checkbox">
-                        <span class="toggleFeedback">Ataques Aleatorias</span>
-                        <br>
+                                                    
+                        <div class="random-mode-option" data-checkbox-id="entrenadores-aleatorios">
+                            <input type="checkbox">
+                            <span class="toggleFeedback">Entrenadores Aleatorios</span>
+                        </div>
 
-                        <input type="checkbox">
-                        <span class="toggleFeedback">Habilidades Aleatorias</span>
-                        <br>
+                       <div class="random-mode-option" data-checkbox-id="entrenadores-aleatorios">  
+                            <input type="checkbox">
+                            <span class="toggleFeedback">Salvajes Aleatorios</span>
+                        </div>
+
+                        <div class="random-mode-option">
+                            <input type="checkbox">
+                            <span class="toggleFeedback">Ataques Aleatorios</span>
+                        </div>
+
+                        <div class="random-mode-option">
+                            <input type="checkbox">
+                            <span class="toggleFeedback">Habilidades Aleatorias</span>
+                        </div>
                     </div>
+
                    
-                    <button type="submit" name="enviar" id="enviar">Enviar</button>
+                
 
                 </div>
                
@@ -394,9 +463,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             var genImagesContainers = document.querySelectorAll('.gen-images');
 
             // Mostrar todas las imágenes al cargar la página
-            genImagesContainers.forEach(function(container) {
-                container.style.display = 'none';
-            });
+            
             allImagesContainer.style.display = 'block';
 
             var genSections = document.querySelectorAll('.images-container');
@@ -420,9 +487,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     // Restablecer el filtro de todas las imágenes al cambiar de generación
                     var images = document.querySelectorAll('.image-with-text img');
-                    images.forEach(function(img) {
-                        img.style.filter = 'none';
-                    });
+                    
                 });
             });
 
@@ -444,9 +509,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Restablecer el filtro de todas las imágenes al seleccionar "Todos"
                 var images = document.querySelectorAll('.image-with-text img');
-                images.forEach(function(img) {
-                    img.style.filter = 'none';
-                });
+               
             });
 
             // Establecer "Todos" como seleccionado por defecto
@@ -456,20 +519,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             var images = document.querySelectorAll('.image-with-text');
             images.forEach(function(image) {
                 image.addEventListener('click', function() {
-                    // Restablecer el color de todos los elementos
+                    var selectedText = this.querySelector('p').innerText;
+
+                    // Deseleccionar todas las imágenes
                     images.forEach(function(img) {
                         img.querySelector('p').classList.remove('gen-selected');
                     });
 
-                    // Cambiar el color del texto de la imagen seleccionada a negro y subrayado
-                    this.querySelector('p').classList.add('gen-selected');
-
-                    // Cambiar el color de las imágenes no seleccionadas a gris
+                    // Seleccionar imágenes con el mismo texto
                     images.forEach(function(img) {
-                        if (img !== image) {
-                            img.querySelector('img').style.filter = 'grayscale(100%)';
+                        if (img.querySelector('p').innerText === selectedText) {
+                            img.querySelector('p').classList.add('gen-selected');
+                            img.querySelector('img').style.filter = 'none'; // Quitar el filtro de escala de grises
                         } else {
-                            img.querySelector('img').style.filter = 'none';
+                            img.querySelector('img').style.filter = 'grayscale(100%)'; // Aplicar escala de grises a las imágenes no seleccionadas
                         }
                     });
 
@@ -480,6 +543,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Agregar el nombre de la imagen seleccionada al campo del formulario
                     document.getElementById('nombre_imagen_seleccionada').value = imageName;
                 });
+            });
+            var optionDivs = document.querySelectorAll('.random-mode-option');
+
+            optionDivs.forEach(function(optionDiv) {
+                optionDiv.addEventListener('click', function() {
+                    var checkbox = optionDiv.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked; // Cambia el estado del checkbox al contrario del estado actual
+                });
+            });
+
+            var modoAleatorioToggle = document.getElementById('modo-aleatorio-toggle');
+            var modalidadFeedback = document.getElementById('modalidad-feedback');
+
+            modoAleatorioToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    modalidadFeedback.textContent = 'Modo Aleatorio';
+                } else {
+                    modalidadFeedback.textContent = 'Modo Normal';
+                }
             });
         });
     </script>
