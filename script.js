@@ -50,3 +50,5 @@ elementos.forEach(elemento => {
         elemento.classList.add('active');
     });
 });
+
+

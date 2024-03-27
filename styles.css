@@ -347,6 +347,24 @@ section {
     z-index: 1;
 }
 
+.elemento2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* Inicialmente invisible */
+    transition: opacity 0.3s;
+}
+
+.elemento2:hover::before {
+    opacity: 1;
+    /* Muestra la superposición al pasar el ratón */
+}
+
 .elemento1::before {
     content: '';
     position: absolute;
@@ -360,17 +378,15 @@ section {
     transition: opacity 0.3s;
 }
 
-/* Desactivar el efecto de escala cuando elemento1 está activo */
-.elemento1.active:hover {
-    transform: none;
-    /* Anula cualquier transformación de escala */
+.elemento1:hover::before {
+    opacity: 1;
+    /* Muestra la superposición al pasar el ratón */
 }
 
 
-.elemento1.active:hover .titulo {
-    transform: none;
-    color: inherit;
-    /* Restaura los estilos predeterminados del título cuando está activo y se hace hover */
+.elemento1:hover .titulo {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #ffffff;
 }
 
 
@@ -553,6 +569,7 @@ section {
     0% {
         width: 100%;
     }
+
     100% {
         width: 0;
     }
@@ -562,4 +579,211 @@ section {
     animation: shrinkWidth 0.5s ease-in-out;
 }
 
-        
+/*Modal Unirse CSS */
+.formulario {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.columna {
+    width: 25%;
+    /* Ancho de cada columna */
+}
+
+label {
+    margin-right: 10px;
+}
+
+.random-mode-option {
+    border: 1px solid #ccc;
+    /* Agrega un borde alrededor de cada opción */
+    padding: 10px;
+    /* Añade un espacio interno para separar las opciones */
+    margin-bottom: 10px;
+    /* Agrega espacio debajo de cada opción */
+    width: 30vh;
+    /* Anchura del contenedor */
+
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* seleccion jeugo css */
+#liga-container {
+    width: 400px;
+    /* Anchura del contenedor */
+    height: auto;
+    margin: 0 auto;
+    /* Margen superior e inferior 0, margen izquierdo y derecho automático (centra horizontalmente) */
+    text-align: center;
+    /* Centra el texto dentro del contenedor */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #333;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.images-container {
+    display: inline-block;
+    margin-top: 0px;
+    /* Ajusta el margen superior para más separación */
+    margin-bottom: 20px;
+    /* Ajusta el margen inferior para más separación */
+    overflow-x: auto;
+    text-align: center;
+
+}
+
+.images-container:last-child {
+    border-right: none;
+}
+
+.text-container p {
+    color: gray;
+    font-weight: bold;
+    margin: 5px;
+}
+
+/* Aumentar el tamaño de las letras Gen */
+.images-container p {
+    color: gray;
+    font-size: 18px;
+    /* Puedes ajustar el tamaño según tu preferencia */
+    transition: color 0.3s;
+    /* Transición de color */
+}
+
+.gen-selected {
+    color: black !important;
+    /* !important para priorizar este color sobre el color establecido en el estilo */
+    text-decoration: underline;
+    /* Agregar subrayado */
+}
+
+/* Cambiar el color al pasar el ratón */
+.images-container p:hover {
+
+    cursor: pointer;
+    /* Cambiar el cursor */
+}
+
+/* Estilos omitidos por brevedad */
+#liga-container {
+    /* Estilos omitidos por brevedad */
+}
+
+.images-container {
+    /* Estilos omitidos por brevedad */
+}
+
+.gen-images {
+    display: none;
+    /* Ocultar todas las imágenes al principio */
+}
+
+.gen-images.active {
+    display: block;
+    /* Mostrar las imágenes de la generación activa */
+}
+
+/* Estilos para las imágenes */
+.gen-images img {
+    width: 100px;
+    /* Ancho de las imágenes */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+    margin: 5px;
+    /* Margen entre las imágenes */
+
+}
+
+.image-with-text {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    /* Cambiar el cursor al pasar sobre la imagen */
+}
+
+.image-with-text img {
+    display: block;
+    /* Asegura que las imágenes se muestren correctamente una debajo de la otra */
+    margin-bottom: 5px;
+    /* Agrega un pequeño espacio entre la imagen y el texto */
+}
+
+.image-with-text p {
+    margin: 0;
+    /* Asegura que no haya espacios entre el texto y los bordes del contenedor */
+}
+
+
+.image-with-text.selected img {
+    filter: grayscale(0%);
+    /* Eliminar la escala de grises cuando la imagen está seleccionada */
+}

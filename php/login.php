@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-
+session_start(); // Iniciar la sesión si no está iniciada
 try {
     $hostname = "localhost";
     $dbname = "lokeleague";
